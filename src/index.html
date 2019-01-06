@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="../semantic/dist/semantic.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Discovery Wizard</title>
+  </head>
+
+  <body>
+    <div class="ui grid container">
+      <div class="row"></div>
+      <div class="ui three column row inverted accordion">
+        <div class="column">
+          <div class="active title">
+            Discovery Source
+            <div class="ui horizontal divider">
+              <a class="ui mini green circular label">1</a>
+            </div>
+          </div>
+          <div class="active content">
+            <div class="ui inverted segment">
+              <div class="ui sub header">Discovery Source</div>
+              <select name="skills" class="ui fluid search dropdown">
+                <option value="ip">IP</option>
+                <option value="ip-range">IP Range</option>
+                <option value="cvs">CVS</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="title">
+            Discovery Options
+            <div class="ui horizontal divider">
+              <a class="ui mini green circular label">2</a>
+            </div>
+          </div>
+          <div class="center aligned content"><p>Some text</p></div>
+        </div>
+        <div class="column">
+          <div class="title">
+            Discovery Input Data
+            <div class="ui horizontal divider">
+              <a class="ui mini green circular label">3</a>
+            </div>
+          </div>
+          <div class="content"><p>Some text</p></div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../semantic/dist/semantic.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
