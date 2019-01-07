@@ -1,2 +1,2 @@
 # discovery-wizard
-Test task Retate Data
+Test task for Retate Data
