@@ -12,8 +12,92 @@
   </head>
 
   <body>
-    <div class="ui grid container">
-      <div class="row"></div>
+    <div class="ui grid">
+      <div class="ui row"></div>
+      <div class="ui centered row">
+        <div class="ui steps">
+          <div class="link step">
+            <div class="content">Discovery Source</div>
+            <div class="ui horizontal divider description">
+              <a class="ui mini green circular label description">1</a>
+            </div>
+          </div>
+          <div class="link step">
+            <div class="content">Discovery Options</div>
+            <div class="ui green horizontal divider description">
+              <a class="ui mini white circular label description">2</a>
+            </div>
+          </div>
+          <div class="link step">
+            <div class="content">Discovery Input Data</div>
+            <div class="ui horizontal divider description">
+              <a class="ui mini white circular label description">3</a>
+            </div>
+          </div>
+          <div class="disabled step">
+            <div class="content">Summary</div>
+            <div class="ui horizontal divider description">
+              <a class="ui mini white circular label description">4</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column"></div>
+      <div class="nine wide column">
+        <div class="ui segment">
+          <div class="ui inverted accordion">
+            <div class="title">
+              <i class="dropdown icon"></i>Discovery Source
+            </div>
+            <div class="content">
+              <div name="source" class="ui fluid vertical menu">
+                <a class="item" id="ip">
+                    <form class="ui form">
+                        <div class="field">
+                          <label>First Name</label>
+                          <input type="text" name="first-name" placeholder="First Name">
+                        </div>
+                    </form>
+                </a>
+                <a class="item" id="ip-range">IP Range</a>
+                <a class="item" id="cvs">CVS</a>
+              </div>
+              <div class="ui inverted segment">
+                <div id="ip-content" style="display:none">IP</div>
+                <div id="ip-range-content" style="display:none">IP Range</div>
+                <div id="cvs-content" style="display:none">CVS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="five wide column"><div class="ui segment"></div></div>
+      <div class="lolumn"></div>
+      <div class="centered fourteen wide column">
+        <div class="ui segment"></div>
+      </div>
+      <div class="row">
+        <div class="column"></div>
+        <div class="left floated column"> <div class="ui button">Clear</div> </div>
+        <div class="right floated column"><div class="ui positive button">Discover</div></div>
+        <div class="column"></div>
+      </div>
+    </div>
+      
+      
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../semantic/dist/semantic.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- <div class="row"></div>
       <div class="ui three column row inverted accordion">
         <div class="column">
           <div class="active title">
@@ -51,15 +135,4 @@
           </div>
           <div class="content"><p>Some text</p></div>
         </div>
-      </div>
-    </div>
-
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"
-    ></script>
-    <script src="../semantic/dist/semantic.min.js"></script>
-    <script src="script.js"></script>
-  </body>
-</html>
+      </div> -->
