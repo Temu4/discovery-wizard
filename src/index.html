@@ -50,18 +50,21 @@
               <i class="dropdown icon"></i>Discovery Source
             </div>
             <div class="content">
-              <div name="source" class="ui fluid vertical menu">
-                <a class="item" id="ip">
-                    <form class="ui form">
-                        <div class="field">
-                          <label>First Name</label>
-                          <input type="text" name="first-name" placeholder="First Name">
-                        </div>
-                    </form>
-                </a>
+              <!-- <div name="source" class="ui fluid vertical menu">
+                <a class="item" id="ip">IP</a>
                 <a class="item" id="ip-range">IP Range</a>
                 <a class="item" id="cvs">CVS</a>
-              </div>
+              </div> -->
+              <div class="ui selection fluid dropdown">
+                  <input type="hidden" name="gender">
+                  <i class="dropdown icon"></i>
+                  <div class="default text">IP</div>
+                  <div class="menu">
+                    <a class="item" data-value="2" id="ip">IP</a>
+                    <a class="item" data-value="1" id="ip-range">IP Range</a>
+                    <a class="item" data-value="0" id="cvs">CVS</a>
+                  </div>
+                </div>
               <div class="ui inverted segment">
                 <div id="ip-content" style="display:none">IP</div>
                 <div id="ip-range-content" style="display:none">IP Range</div>
