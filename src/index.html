@@ -1,65 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link rel="stylesheet" href="../semantic/dist/semantic.min.css" />
-    <link rel="stylesheet" href="./style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>Discovery Wizard</title>
-  </head>
+  <link rel="stylesheet" href="../semantic/dist/semantic.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
 
-  <body>
-    <div class="ui grid container">
-      <div class="row"></div>
-      <div class="ui three column row inverted accordion">
-        <div class="column">
-          <div class="active title">
-            Discovery Source
-            <div class="ui horizontal divider">
-              <a class="ui mini green circular label">1</a>
-            </div>
+  <title>Discovery Wizard</title>
+</head>
+
+<body>
+  <div class="ui grid">
+
+    <!-- empty row -->
+    <div class="ui row"></div>
+
+    <!-- Steps -->
+    <div class="ui centered row">
+      <div class="ui steps">
+
+        <!-- Step for Discovery Source -->
+        <div class="link step source">
+          <div class="content">Discovery Source</div>
+          <div class="ui horizontal divider description">
+            <a class="ui mini circular label description source">1</a>
           </div>
-          <div class="active content">
+        </div>
+
+
+        <!-- Step for Discovery Options -->
+        <div class="link step options">
+          <div class="content">Discovery Options</div>
+          <div class="ui green horizontal divider description">
+            <a class="ui mini circular label description options">2</a>
+          </div>
+        </div>
+
+        <!-- Step for Discovery Input Data -->
+        <div class="link step data">
+          <div class="content">Discovery Input Data</div>
+          <div class="ui horizontal divider description">
+            <a class="ui mini circular label description data">3</a>
+          </div>
+        </div>
+
+        <!-- Step for Summary -->
+        <div class="disabled step">
+          <div class="content">Summary</div>
+          <div class="ui horizontal divider description">
+            <a class="ui mini circular label description">4</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- empty column -->
+    <div class="column"></div>
+
+    <!-- Segment for Discovery Source -->
+    <div class="nine wide column">
+      <div class="ui segment">
+        <div class="ui inverted accordion">
+          <div class="title">
+            <i class="dropdown icon"></i>Discovery Source
+          </div>
+          <div class="content source">
+            <div class="ui selection fluid dropdown">
+              <input type="hidden" name="ip" />
+              <i class="dropdown icon"></i>
+              <div class="default text">IP</div>
+              <div class="menu">
+                <a class="item" data-value="2" id="ip">IP</a>
+                <a class="item" data-value="1" id="ip-range">IP Range</a>
+                <a class="item" data-value="0" id="cvs">CVS</a>
+              </div>
+            </div>
+
+            <!-- Segment for Accordion contents -->
             <div class="ui inverted segment">
-              <div class="ui sub header">Discovery Source</div>
-              <select name="skills" class="ui fluid search dropdown">
-                <option value="ip">IP</option>
-                <option value="ip-range">IP Range</option>
-                <option value="cvs">CVS</option>
-              </select>
+
+              <!-- Content for IP -->
+              <div id="ip-content" class="hidden">
+                <form class="ui form">
+                  <div class="field">
+                    <label>IP</label>
+                    <input type="text" name="ip-address" placeholder="IP-address" data-mask="255 . 255 . 255 . 255">
+                  </div>
+                </form>
+              </div>
+
+              <!-- Content for IP Range -->
+              <div id="ip-range-content" class="hidden">
+                <form class="ui form">
+                  <div class="field">
+                    <label>Starting IP Address</label>
+                    <input type="text" name="start-ip-address" placeholder="IP-address" data-mask="255 . 255 . 255 . 255">
+                    <label>Ending IP Address</label>
+                    <input type="text" name="end-ip-address" placeholder="IP-address" data-mask="255 . 255 . 255 . 255">
+                  </div>
+                </form>
+              </div>
+
+              <!-- Content for CVS -->
+              <div id="cvs-content" class="hidden">
+                <div class="ui teal button">Select a file</div>
+                <p>File destanation:...</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="column">
-          <div class="title">
-            Discovery Options
-            <div class="ui horizontal divider">
-              <a class="ui mini green circular label">2</a>
-            </div>
-          </div>
-          <div class="center aligned content"><p>Some text</p></div>
-        </div>
-        <div class="column">
-          <div class="title">
-            Discovery Input Data
-            <div class="ui horizontal divider">
-              <a class="ui mini green circular label">3</a>
-            </div>
-          </div>
-          <div class="content"><p>Some text</p></div>
         </div>
       </div>
     </div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"
-    ></script>
-    <script src="../semantic/dist/semantic.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+    <!-- Segment for Discovery Options -->
+    <div class="five wide column">
+      <div class="ui segment">
+        <div class="ui inverted accordion">
+          <div class="title"><i class="dropdown icon"></i>Discovery Options</div>
+          <div class="content options">
+            <div class="ui form">
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" name="snmp" id="snmp">
+                  <label>SNMP</label>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" name="link">
+                  <label>Link</label>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" name="vlan">
+                  <label>VLan</label>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" name="ports">
+                  <label>Ports</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Segment for Selected Options -->
+    <div class="column"></div>
+    <div class="centered fourteen wide column">
+      <div class="ui segment">
+        <div class="ui inverted accordion">
+          <div class="title"><i class="dropdown icon"></i>Selected Options</div>
+          <div class="content selected-options">
+            <!-- SNMP Options -->
+            <div class="ui form">
+              <label class="blue-label">SNMP Options</label>
+              <div class="inline fields">
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="snmp-version" id="v1">
+                    <label>v1</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="snmp-version" id="v2">
+                    <label>v2</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="snmp-version" id="v3">
+                    <label>v3</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content for v1 and v2 options-->
+              <div class="field hidden" id="v1-segment">
+                <label>Read Community</label>
+                <input type="text" name="read-community" placeholder="public">
+              </div>
+
+              <!-- Segment for v3 option -->
+              <div class="ui segment hidden" id="v3-segment">
+                <div class="ui selection fluid dropdown">
+                  <input type="hidden" name="ip" />
+                  <i class="dropdown icon"></i>
+                  <div class="default text">select option</div>
+                  <div class="menu">
+                    <a class="item" data-value="1" id="authentication">Authentication and No Privacy</a>
+                    <a class="item" data-value="0" id="option2">Option2</a>
+                  </div>
+                </div>
+                </br>
+                <div class="field">
+                  <label>Context Name</label>
+                  <input type="text" name="context-name" placeholder="sample context">
+                </div>
+                <div class="field">
+                  <label>Context Engine ID</label>
+                  <input type="text" name="context-engine" placeholder="sample engine">
+                </div>
+                <!-- Authentication Algorithm -->
+                <label class="blue-label">Authentication Algorithm</label>
+                <div class="inline fields">
+                  <div class="field">
+                    <div class="ui radio checkbox">
+                      <input type="radio" name="algorithm" id="md5">
+                      <label>MD5</label>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="ui radio checkbox">
+                      <input type="radio" name="algorithm" id="sha">
+                      <label>SHA</label>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="ui radio checkbox">
+                      <input type="radio" name="algorithm" id="hmac128">
+                      <label>HMAC128</label>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="ui radio checkbox">
+                      <input type="radio" name="algorithm" id="hmac192">
+                      <label>HMAC1192</label>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="ui radio checkbox">
+                      <input type="radio" name="algorithm" id="hmac256">
+                      <label>HMAC256</label>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="ui radio checkbox">
+                      <input type="radio" name="algorithm" id="hmac382">
+                      <label>HMAC384</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Authentication Password -->
+                <div class="field">
+                  <label>Authentication Password</label>
+                  <input type="text" name="password" placeholder="random password">
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row for Buttons -->
+    <div class="row">
+      <!-- empty column -->
+      <div class="column"></div>
+
+      <!-- Clear Button -->
+      <div class="left floated column">
+        <div class="ui button"> <a href="./index.html">Clear</a></div>
+      </div>
+
+      <!-- Discover Button -->
+      <div class="right floated column">
+        <div class="ui positive button" onclick="Submit()">Discover</div>
+      </div>
+      <!-- empty column -->
+      <div class="column"></div>
+    </div>
+  </div>
+
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+  <script src="../semantic/dist/semantic.min.js"></script>
+  <script src="./js/script.js"></script>
+
+  <!-- mask for input ip-address -->
+  <script src="./js/jquery.mask.js"></script>
+</body>
+
 </html>
