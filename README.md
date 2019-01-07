@@ -1,2 +1,2 @@
 # discovery-wizard
-Test task for Retate Data
+[Test task](https://temu4.github.io/discovery-wizard/) for Retate Data
